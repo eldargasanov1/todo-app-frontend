@@ -8,7 +8,7 @@ export const useTimer = () => {
 	const [timeLeft, setTimeLeft] = useState(1500);
 	const minutes = Math.floor(timeLeft / 60);
 	const seconds = timeLeft - minutes * 60;
-	const startTime = isWorkTime ? 25 * 60 : 5 * 1;
+	const startTime = isWorkTime ? 25 * 60 : 5 * 60;
 
 	const [playAlarm] = useSound(alarm, { volume: 0.25 });
 
