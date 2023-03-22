@@ -5,7 +5,13 @@ export const loginUserAPI = (email, password) => {
 };
 
 export const registerUserAPI = (email, password, fullName, avatarUrl) => {
-	return axios.post('/auth/register', { email, password, fullName, avatarUrl });
+	const newUser = { email, password, fullName };
+
+	if (avatarUrl !== '') {
+		newUser.avatarUrl = avatarUrl;
+	}
+
+	return axios.post('/auth/register', newUser);
 };
 
 export const authMeAPI = () => {
